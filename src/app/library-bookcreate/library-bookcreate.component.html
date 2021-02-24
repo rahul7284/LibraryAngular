@@ -1,0 +1,110 @@
+<div class="container" >
+
+    <p class="h4 text-center">Book Form</p>
+    <div class="form-horizontal">
+    <div class="form-group border border-dark">
+    
+       <div class="form-inline">
+        <div class="col-sm-6">
+            <label class="col-sm-4">Book Name</label>  
+            <input type="text" name="bookName" class="form-control" [(ngModel)] ="book.bookName" placeholder="Book Name">
+        </div>
+          </div>
+        
+    <br>
+         
+          <br>
+      
+    <div class="form-inline">
+        <label class="col-sm-4">Author</label>
+        <div class="col-sm-6"> <input type="text" name="authorName"  class="form-control" [(ngModel)] ="book.authorName" placeholder="Author">
+    </div>
+    </div>
+    <br>
+    <div class="form-inline">
+              
+        <label class="col-sm-4">Book Number</label>
+        <div class="col-sm-6">
+        <input type="text" name="bookNumber" class="form-control" [(ngModel)] ="book.bookNumber" placeholder="Book Number">
+    </div>
+      </div>
+    <br>
+    <div class="form-inline">
+        <label class="col-sm-4">Course Name</label>
+        <div class="col-sm-6">  <input type="text" name="courseName"  class="form-control" [(ngModel)] ="book.courseName" 
+            placeholder="Course Name">
+    </div>
+    </div>
+    <br>
+    <div class="form-inline">
+        <label class="col-sm-4">Publication Date</label>
+        <div class="col-sm-6">  <input type="text" name="publicationDate"  class="form-control" [(ngModel)] ="book.publicationDate" 
+            placeholder="Publication Date">
+    </div>
+    </div>
+    <br>
+    <div class="form-inline">
+        <label class="col-sm-4">Book Price</label>
+        <div class="col-sm-6">  <input type="text" name="bookPrice"  class="form-control" [(ngModel)] ="book.bookPrice" 
+            placeholder="Book Price">
+    </div>
+    </div>
+    <br>
+    
+    <br>
+    <div class="form-group text-center">
+      <button (click)="saveBooks()">Submit</button>
+    </div>
+    </div>
+    </div>
+    
+    </div>
+    
+    <table mat-table [dataSource]="dataLibSource" class="mat-elevation-z8">
+
+        <!--- Note that these columns can be defined in any order.
+              The actual rendered columns are set as a property on the row definition" -->
+      
+        <!-- Position Column -->
+        <ng-container matColumnDef="authorName">
+          <th mat-header-cell *matHeaderCellDef> authorName </th>
+          <td mat-cell *matCellDef="let element"> {{element.authorName}} </td>
+        </ng-container>
+      
+        <!-- Name Column -->
+        <ng-container matColumnDef="bookName">
+          <th mat-header-cell *matHeaderCellDef> bookName </th>
+          <td mat-cell *matCellDef="let element"> {{element.bookName}} </td>
+        </ng-container>
+      
+        <!-- Weight Column -->
+        <ng-container matColumnDef="bookPrice">
+          <th mat-header-cell *matHeaderCellDef> bookPrice </th>
+          <td mat-cell *matCellDef="let element"> {{element.bookPrice}} </td>
+        </ng-container>
+      
+        <!-- Symbol Column -->
+        <ng-container matColumnDef="courseName">
+          <th mat-header-cell *matHeaderCellDef> courseName </th>
+          <td mat-cell *matCellDef="let element"> {{element.courseName}} </td>
+        </ng-container>
+         <!-- Symbol Column -->
+         <ng-container matColumnDef="bookNumber">
+            <th mat-header-cell *matHeaderCellDef> bookNumber </th>
+            <td mat-cell *matCellDef="let element"> {{element.bookNumber}} </td>
+          </ng-container>
+           <!-- Symbol Column -->
+        <ng-container matColumnDef="publicationDate">
+            <th mat-header-cell *matHeaderCellDef> publicationDate </th>
+            <td mat-cell *matCellDef="let element"> {{element.publicationDate}} </td>
+          </ng-container>
+      
+        <tr mat-header-row *matHeaderRowDef="displayedLibColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedLibColumns;"></tr>
+      </table>
+      
+     
+  
+     
+      
+    
